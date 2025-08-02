@@ -51,14 +51,177 @@ function loadCourse(courseId) {
     
     const courses = {
         'crs1': {
-            title: "Introduction Course",
+            title: "Web Development Fundamentals",
             content: `
                 <h2>Welcome to Course 1</h2>
                 <p>This is exclusive content available only through your special link.</p>
                 <section>
                     <h3>Lesson 1: Getting Started</h3>
-                    <p>You should see this content if everything is working properly.</p>
-                    <p>If you see this, your link is working correctly!</p>
+                    <p>All HTML, CSS, and JavaScript commands in one place</p>
+        </header>
+         <!-- HTML Reference Card -->
+        <div class="reference-card" id="html-card">
+          <div class="card-header">
+            <h2>HTML Reference</h2>
+            <span>▼</span>
+          </div>
+          <div class="card-content">
+            <!-- Document Structure -->
+            <div class="command">
+              <div class="command-header">
+                <span class="command-name">&lt;!DOCTYPE html&gt;</span>
+                <span class="command-type">HTML</span>
+              </div>
+              <p class="command-description">Defines the document type and HTML version being used.</p>
+              <div class="command-syntax">&lt;!DOCTYPE html&gt;</div>
+              <div class="command-example">
+                <div class="example-title">Example:</div>
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+              </div>
+            </div>
+
+            <div class="command">
+              <div class="command-header">
+                <span class="command-name">&lt;a&gt;</span>
+                <span class="command-type">HTML</span>
+              </div>
+              <p class="command-description">Defines a hyperlink to link from one page to another.</p>
+              <div class="command-syntax">&lt;a href="url"&gt;link text&lt;/a&gt;</div>
+              <div class="command-example">
+                <div class="example-title">Example:</div>
+                <pre>&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+&lt;a href="#section2"&gt;Jump to Section 2&lt;/a&gt;</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CSS Reference Card -->
+        <div class="reference-card" id="css-card">
+          <div class="card-header">
+            <h2>CSS Reference</h2>
+            <span>▼</span>
+          </div>
+          <div class="card-content">
+            <div class="command">
+              <div class="command-header">
+                <span class="command-name">display</span>
+                <span class="command-type">CSS</span>
+              </div>
+              <p class="command-description">Specifies the display behavior of an element.</p>
+              <div class="command-syntax">display: block | inline | inline-block | flex | grid | none;</div>
+              <div class="command-example">
+                <div class="example-title">Example:</div>
+                <pre>.block-element {
+    display: block;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}</pre>
+              </div>
+            </div>
+
+            <div class="command">
+              <div class="command-header">
+                <span class="command-name">padding</span>
+                <span class="command-type">CSS</span>
+              </div>
+              <p class="command-description">Sets the padding area on all four sides of an element.</p>
+              <div class="command-syntax">
+                padding: all;<br>
+                padding: top-bottom left-right;<br>
+                padding: top right bottom left;
+              </div>
+              <div class="command-example">
+                <div class="example-title">Example:</div>
+                <pre>.box {
+    padding: 20px; /* All sides */
+}
+
+.card {
+    padding: 10px 20px; /* Top/bottom, left/right */
+}
+
+.special {
+    padding: 5px 10px 15px 20px; /* Top, right, bottom, left */
+}</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- JavaScript Reference Card -->
+        <div class="reference-card" id="js-card">
+          <div class="card-header">
+            <h2>JavaScript Reference</h2>
+            <span>▼</span>
+          </div>
+          <div class="card-content">
+            <div class="command">
+              <div class="command-header">
+                <span class="command-name">Variables</span>
+                <span class="command-type">JavaScript</span>
+              </div>
+              <p class="command-description">Containers for storing data values.</p>
+              <div class="command-syntax">
+                let variableName = value;<br>
+                const constantName = value;<br>
+                var oldVariable = value;
+              </div>
+              <div class="command-example">
+                <div class="example-title">Example:</div>
+                <pre>let age = 25;
+const PI = 3.14159;
+var name = "John";
+
+age = 26; // Valid
+// PI = 3.14; // Error (const can't be reassigned)</pre>
+              </div>
+            </div>
+
+            <div class="command">
+              <div class="command-header">
+                <span class="command-name">Functions</span>
+                <span class="command-type">JavaScript</span>
+              </div>
+              <p class="command-description">Blocks of code designed to perform particular tasks.</p>
+              <div class="command-syntax">
+                function name(parameters) {<br>
+                &nbsp;&nbsp;// code<br>
+                }<br><br>
+                const name = function(parameters) {<br>
+                &nbsp;&nbsp;// code<br>
+                };<br><br>
+                const name = (parameters) => {<br>
+                &nbsp;&nbsp;// code<br>
+                };
+              </div>
+              <div class="command-example">
+                <div class="example-title">Example:</div>
+                <pre>function greet(name) {
+    return "Hello, " + name;
+}
+
+const square = function(x) {
+    return x * x;
+};
+
+const add = (a, b) => a + b;</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
                 </section>
             `
         },
