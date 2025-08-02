@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Access</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="course-container">
+        <div id="course-content">
+            <!-- Content loaded dynamically -->
+        </div>
+        
+        <div id="invalid-access" class="hidden">
+            <h2>Access Denied</h2>
+            <p>This course link is invalid or has expired.</p>
+            <p>Please obtain a valid link from official channels.</p>
+            <a href="index.html" class="btn">Return to Home</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseId = urlParams.get('id');
+            const token = urlParams.get('token');
+            
+            if (!courseId || !token || !validateCourseId(courseId)) {
+                showAccessDenied();
+                return;
+            }
+            
+            loadCourse(courseId);
+        });
+        
+        function showAccessDenied() {
+            document.getElementById('invalid-access').classList.remove('hidden');
+            document.getElementById('course-content').classList.add('hidden');
+        }
+        
+        function loadCourse(courseId) {
+            const courses = {
+                'crs1': {
+                    title: "Introduction Course",
+                    content: `
+                        <h2>Welcome to Course 1</h2>
+                        <p>This is exclusive content available only through your special link.</p>
+                        <section>
+                            <h3>Lesson 1: Getting Started</h3>
+                            <p>This content would normally be protected and only available to select students.</p>
+                        </section>
+                    `
+                },
+                'crs2': {
+                    title: "Advanced Techniques",
+                    content: `
+                        <h2>Advanced Course Content</h2>
+                        <p>Specialized knowledge shared only with select students.</p>
+                        <section>
+                            <h3>Advanced Topic 1</h3>
+                            <p>In-depth exploration of specialized techniques.</p>
+                        </section>
+                    `
+                }
+            };
+            
+            if (courses[courseId]) {
+                document.title = courses[courseId].title + " | Private Learning";
+                document.getElementById('course-content').innerHTML = `
+                    <h1>${courses[courseId].title}</h1>
+                    ${courses[courseId].content}
+                    <div class="course-footer">
+                        <p>Bookmark this page to retain access.</p>
+                    </div>
+                `;
+            } else {
+                showAccessDenied();
+            }
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+<body>
+    
+</body>
+</html>
