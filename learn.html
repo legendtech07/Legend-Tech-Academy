@@ -12,30 +12,32 @@
         <div id="course-content">
             <!-- Content loaded dynamically -->
         </div>
+        
+        <div id="invalid-access" class="hidden">
+            <h2>Access Denied</h2>
+            <p>This course link is invalid or has expired.</p>
+            <p>Please obtain a valid link from official channels.</p>
+            <a href="index.html" class="btn">Return to Home</a>
+        </div>
 
         <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Debug: Log that the script is running
     console.log("Script loaded - checking URL parameters");
     
     const urlParams = new URLSearchParams(window.location.search);
     const courseId = urlParams.get('id');
     const token = urlParams.get('token');
     
-    // Debug: Log the extracted parameters
     console.log("Course ID:", courseId);
     console.log("Token:", token);
     
-    // Check if required parameters exist
     if (!courseId) {
         console.error("No course ID found in URL");
         showAccessDenied();
         return;
     }
     
-    // Debug: Log before loading course
     console.log("Attempting to load course:", courseId);
-    
     loadCourse(courseId);
 });
 
@@ -46,7 +48,6 @@ function showAccessDenied() {
 }
 
 function loadCourse(courseId) {
-    // Debug: Log course loading attempt
     console.log("Loading course content for:", courseId);
     
     const courses = {
@@ -58,25 +59,25 @@ function loadCourse(courseId) {
                 <section>
                     <h3>Lesson 1: Getting Started</h3>
                     <p>All HTML, CSS, and JavaScript commands in one place</p>
-        </header>
-         <!-- HTML Reference Card -->
-        <div class="reference-card" id="html-card">
-          <div class="card-header">
-            <h2>HTML Reference</h2>
-            <span>▼</span>
-          </div>
-          <div class="card-content">
-            <!-- Document Structure -->
-            <div class="command">
-              <div class="command-header">
-                <span class="command-name">&lt;!DOCTYPE html&gt;</span>
-                <span class="command-type">HTML</span>
-              </div>
-              <p class="command-description">Defines the document type and HTML version being used.</p>
-              <div class="command-syntax">&lt;!DOCTYPE html&gt;</div>
-              <div class="command-example">
-                <div class="example-title">Example:</div>
-                <pre>&lt;!DOCTYPE html&gt;
+                </section>
+                <!-- HTML Reference Card -->
+                <div class="reference-card" id="html-card">
+                    <div class="card-header">
+                        <h2>HTML Reference</h2>
+                        <span>▼</span>
+                    </div>
+                    <div class="card-content">
+                        <!-- Document Structure -->
+                        <div class="command">
+                            <div class="command-header">
+                                <span class="command-name">&lt;!DOCTYPE html&gt;</span>
+                                <span class="command-type">HTML</span>
+                            </div>
+                            <p class="command-description">Defines the document type and HTML version being used.</p>
+                            <div class="command-syntax">&lt;!DOCTYPE html&gt;</div>
+                            <div class="command-example">
+                                <div class="example-title">Example:</div>
+                                <pre>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;Page Title&lt;/title&gt;
@@ -85,42 +86,40 @@ function loadCourse(courseId) {
     &lt;h1&gt;My First Heading&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
-              </div>
-            </div>
-
-            <div class="command">
-              <div class="command-header">
-                <span class="command-name">&lt;a&gt;</span>
-                <span class="command-type">HTML</span>
-              </div>
-              <p class="command-description">Defines a hyperlink to link from one page to another.</p>
-              <div class="command-syntax">&lt;a href="url"&gt;link text&lt;/a&gt;</div>
-              <div class="command-example">
-                <div class="example-title">Example:</div>
-                <pre>&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+                            </div>
+                        </div>
+                        <div class="command">
+                            <div class="command-header">
+                                <span class="command-name">&lt;a&gt;</span>
+                                <span class="command-type">HTML</span>
+                            </div>
+                            <p class="command-description">Defines a hyperlink to link from one page to another.</p>
+                            <div class="command-syntax">&lt;a href="url"&gt;link text&lt;/a&gt;</div>
+                            <div class="command-example">
+                                <div class="example-title">Example:</div>
+                                <pre>&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
 &lt;a href="#section2"&gt;Jump to Section 2&lt;/a&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CSS Reference Card -->
-        <div class="reference-card" id="css-card">
-          <div class="card-header">
-            <h2>CSS Reference</h2>
-            <span>▼</span>
-          </div>
-          <div class="card-content">
-            <div class="command">
-              <div class="command-header">
-                <span class="command-name">display</span>
-                <span class="command-type">CSS</span>
-              </div>
-              <p class="command-description">Specifies the display behavior of an element.</p>
-              <div class="command-syntax">display: block | inline | inline-block | flex | grid | none;</div>
-              <div class="command-example">
-                <div class="example-title">Example:</div>
-                <pre>.block-element {
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- CSS Reference Card -->
+                <div class="reference-card" id="css-card">
+                    <div class="card-header">
+                        <h2>CSS Reference</h2>
+                        <span>▼</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="command">
+                            <div class="command-header">
+                                <span class="command-name">display</span>
+                                <span class="command-type">CSS</span>
+                            </div>
+                            <p class="command-description">Specifies the display behavior of an element.</p>
+                            <div class="command-syntax">display: block | inline | inline-block | flex | grid | none;</div>
+                            <div class="command-example">
+                                <div class="example-title">Example:</div>
+                                <pre>.block-element {
     display: block;
 }
 
@@ -128,23 +127,22 @@ function loadCourse(courseId) {
     display: flex;
     justify-content: center;
 }</pre>
-              </div>
-            </div>
-
-            <div class="command">
-              <div class="command-header">
-                <span class="command-name">padding</span>
-                <span class="command-type">CSS</span>
-              </div>
-              <p class="command-description">Sets the padding area on all four sides of an element.</p>
-              <div class="command-syntax">
-                padding: all;<br>
-                padding: top-bottom left-right;<br>
-                padding: top right bottom left;
-              </div>
-              <div class="command-example">
-                <div class="example-title">Example:</div>
-                <pre>.box {
+                            </div>
+                        </div>
+                        <div class="command">
+                            <div class="command-header">
+                                <span class="command-name">padding</span>
+                                <span class="command-type">CSS</span>
+                            </div>
+                            <p class="command-description">Sets the padding area on all four sides of an element.</p>
+                            <div class="command-syntax">
+                                padding: all;<br>
+                                padding: top-bottom left-right;<br>
+                                padding: top right bottom left;
+                            </div>
+                            <div class="command-example">
+                                <div class="example-title">Example:</div>
+                                <pre>.box {
     padding: 20px; /* All sides */
 }
 
@@ -155,60 +153,58 @@ function loadCourse(courseId) {
 .special {
     padding: 5px 10px 15px 20px; /* Top, right, bottom, left */
 }</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- JavaScript Reference Card -->
-        <div class="reference-card" id="js-card">
-          <div class="card-header">
-            <h2>JavaScript Reference</h2>
-            <span>▼</span>
-          </div>
-          <div class="card-content">
-            <div class="command">
-              <div class="command-header">
-                <span class="command-name">Variables</span>
-                <span class="command-type">JavaScript</span>
-              </div>
-              <p class="command-description">Containers for storing data values.</p>
-              <div class="command-syntax">
-                let variableName = value;<br>
-                const constantName = value;<br>
-                var oldVariable = value;
-              </div>
-              <div class="command-example">
-                <div class="example-title">Example:</div>
-                <pre>let age = 25;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- JavaScript Reference Card -->
+                <div class="reference-card" id="js-card">
+                    <div class="card-header">
+                        <h2>JavaScript Reference</h2>
+                        <span>▼</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="command">
+                            <div class="command-header">
+                                <span class="command-name">Variables</span>
+                                <span class="command-type">JavaScript</span>
+                            </div>
+                            <p class="command-description">Containers for storing data values.</p>
+                            <div class="command-syntax">
+                                let variableName = value;<br>
+                                const constantName = value;<br>
+                                var oldVariable = value;
+                            </div>
+                            <div class="command-example">
+                                <div class="example-title">Example:</div>
+                                <pre>let age = 25;
 const PI = 3.14159;
 var name = "John";
 
 age = 26; // Valid
 // PI = 3.14; // Error (const can't be reassigned)</pre>
-              </div>
-            </div>
-
-            <div class="command">
-              <div class="command-header">
-                <span class="command-name">Functions</span>
-                <span class="command-type">JavaScript</span>
-              </div>
-              <p class="command-description">Blocks of code designed to perform particular tasks.</p>
-              <div class="command-syntax">
-                function name(parameters) {<br>
-                &nbsp;&nbsp;// code<br>
-                }<br><br>
-                const name = function(parameters) {<br>
-                &nbsp;&nbsp;// code<br>
-                };<br><br>
-                const name = (parameters) => {<br>
-                &nbsp;&nbsp;// code<br>
-                };
-              </div>
-              <div class="command-example">
-                <div class="example-title">Example:</div>
-                <pre>function greet(name) {
+                            </div>
+                        </div>
+                        <div class="command">
+                            <div class="command-header">
+                                <span class="command-name">Functions</span>
+                                <span class="command-type">JavaScript</span>
+                            </div>
+                            <p class="command-description">Blocks of code designed to perform particular tasks.</p>
+                            <div class="command-syntax">
+                                function name(parameters) {<br>
+                                &nbsp;&nbsp;// code<br>
+                                }<br><br>
+                                const name = function(parameters) {<br>
+                                &nbsp;&nbsp;// code<br>
+                                };<br><br>
+                                const name = (parameters) => {<br>
+                                &nbsp;&nbsp;// code<br>
+                                };
+                            </div>
+                            <div class="command-example">
+                                <div class="example-title">Example:</div>
+                                <pre>function greet(name) {
     return "Hello, " + name;
 }
 
@@ -217,12 +213,10 @@ const square = function(x) {
 };
 
 const add = (a, b) => a + b;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             `
         },
         'crs2': {
@@ -243,59 +237,56 @@ const add = (a, b) => a + b;</pre>
         'crs3': {
             title: "React.js Crash Course",
             content: `
-                 <h2>React.js crash course class</h2>
-                 <p>In this course, there will be varieties of lessons like react.js for frontend development, react.js for app development and so on.</p>
-                 <div class="course-container">
-        <!-- First Course Section -->
-        <section class="course-section">
-            <h3>React.js for frontend website development</h3>
-            <a href="https://www.udemy.com/share/101rkI3@_untVyl7pnscOa-rOKvIqLpKvuvEguw7ky8id9RrkUe5EORjs6WwqOraqMeb6NYnYA==/">
-                <button class="course-button">Go To Course</button>
-            </a>
-        </section>
+                <h2>React.js crash course class</h2>
+                <p>In this course, there will be varieties of lessons like react.js for frontend development, react.js for app development and so on.</p>
+                <div class="course-container">
+                    <!-- First Course Section -->
+                    <section class="course-section">
+                        <h3>React.js for frontend website development</h3>
+                        <a href="https://www.udemy.com/share/101rkI3@_untVyl7pnscOa-rOKvIqLpKvuvEguw7ky8id9RrkUe5EORjs6WwqOraqMeb6NYnYA==/">
+                            <button class="course-button">Go To Course</button>
+                        </a>
+                    </section>
 
-        <!-- Second Course Section -->
-        <section class="course-section">
-            <h3>Admin panel in Material UI with React.js</h3>
-            <a href="https://www.udemy.com/share/10dMab3@Nbtes8uA1H3jhBjEwKgNRCzNR0sKGKHp29BB4mwEoS1frd4ykfpjsjwVBe4N6j-UVQ==/">
-                <button class="course-button">Go To Course</button>
-            </a>
-        </section>
+                    <!-- Second Course Section -->
+                    <section class="course-section">
+                        <h3>Admin panel in Material UI with React.js</h3>
+                        <a href="https://www.udemy.com/share/10dMab3@Nbtes8uA1H3jhBjEwKgNRCzNR0sKGKHp29BB4mwEoS1frd4ykfpjsjwVBe4N6j-UVQ==/">
+                            <button class="course-button">Go To Course</button>
+                        </a>
+                    </section>
 
-        <!-- Third Course Section -->
-        <section class="course-section">
-            <h3>React.js For Absolut Beginners: 3D Weather Application</h3>
-            <a href="https://www.udemy.com/share/10bAWh3@wyaedXPkYF4dqDLIj5EMmzB_G8La5MzkjYluO8E_2aVRdl7Kp-DKATVcIJbU20E1xA==/">
-                <button class="course-button">Go To Course</button>
-            </a>
-        </section>
-        
-        <!-- Add more sections as needed -->
-    </div>
-                 `
+                    <!-- Third Course Section -->
+                    <section class="course-section">
+                        <h3>React.js For Absolut Beginners: 3D Weather Application</h3>
+                        <a href="https://www.udemy.com/share/10bAWh3@wyaedXPkYF4dqDLIj5EMmzB_G8La5MzkjYluO8E_2aVRdl7Kp-DKATVcIJbU20E1xA==/">
+                            <button class="course-button">Go To Course</button>
+                        </a>
+                    </section>
+                </div>
+            `
         },
         'crs4': {
             title: "Node.js Backend Development",
             content: `
-                 <div class="course-container">
-            <!-- First Course Section -->
-            <section class="course-section">
-                <h3>Node.js Tutorial For Beginners</h3>
-                <h4>What You Will Learn👨‍🏫</h4>
-                <p> •Develop RESTful APIs with Node.js and Express.js
-                    •Integrate and Manage Databases with Sequelize ORM
-                    •Implement Modern JavaScript Practices in Backend Development
-                    •Build a Scalable and Maintainable Backend Application </p>
-               <a href="https://www.udemy.com/share/10dEbz3@KsYcb_pxXV_sq5_t0MNHJ7d6laaDsO2ZX3A7B_7VgX8uPkoFFodFqIeddXDcfvCTCQ==/">
-                    <button class="course-button">Go To Course</button>
-               </a>
-               </section>
-            </div>
-
-            }
+                <div class="course-container">
+                    <!-- First Course Section -->
+                    <section class="course-section">
+                        <h3>Node.js Tutorial For Beginners</h3>
+                        <h4>What You Will Learn👨‍🏫</h4>
+                        <p> •Develop RESTful APIs with Node.js and Express.js
+                            •Integrate and Manage Databases with Sequelize ORM
+                            •Implement Modern JavaScript Practices in Backend Development
+                            •Build a Scalable and Maintainable Backend Application </p>
+                        <a href="https://www.udemy.com/share/10dEbz3@KsYcb_pxXV_sq5_t0MNHJ7d6laaDsO2ZX3A7B_7VgX8uPkoFFodFqIeddXDcfvCTCQ==/">
+                            <button class="course-button">Go To Course</button>
+                        </a>
+                    </section>
+                </div>
+            `
+        }
     };
     
-    // Debug: Log available courses
     console.log("Available courses:", Object.keys(courses));
     
     if (courses[courseId]) {
@@ -313,9 +304,9 @@ const add = (a, b) => a + b;</pre>
         showAccessDenied();
     }
     
-    // Debug: Log final state
     console.log("Course load attempt complete");
 }
         </script>
+    </div>
 </body>
 </html>
