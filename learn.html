@@ -298,6 +298,23 @@ const add = (a, b) => a + b;</pre>
                    </section>  
                 </div>
             `
+        },
+        'crs5': {
+            title: "Python For Beginners",
+            content: `
+                <div class="course-container">
+                    <!-- First Course Section -->
+                    <section class="course-section">
+                        <h3>Full Python Course</h3>
+                        <h4>What You Will Learn</h4>
+                        <p> •Acquire the prerequisite Python skills to move into specific branches - Data Science(Machine Learning/Deep Learning) , Big Data , Automation Testing, Web development etc..
+                        •Have the skills and understanding of Python to confidently apply for Python programming jobs.</p>
+                        <a href="https://coursesarchive.netlify.app/">
+                             <button class="course-button">Go To Course</button>
+                        </a>
+                     </section>
+                  </div>
+            `
         }
     };
     
@@ -308,8 +325,8 @@ const add = (a, b) => a + b;</pre>
         document.title = courses[courseId].title + " | Private Learning";
         document.getElementById('course-content').innerHTML = `
             <h1>${courses[courseId].title}</h1>
-            ${courses[courseId].content}
-            <div class="course-footer">
+            ${courses[courseId].content}          
+    <div class="course-footer">
                 <p>Bookmark this page to retain access.</p>
             </div>
         `;
