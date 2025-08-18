@@ -15,7 +15,7 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #6a1b9a;
 }
 
 .container, .course-container, .admin-container {
@@ -176,7 +176,7 @@ th {
 
         /* Individual course section styling */
         .course-section {
-            border: 1px solid #e0e0e0;
+            border: 1px solid #6a1b9a;
             border-radius: 8px;
             padding: 20px;
             background-color: #fff;
@@ -197,7 +197,7 @@ th {
 
         /* Button styling */
         .course-button {
-            background-color: #4CAF50;
+            background-color: #e65100;
             color: white;
             border: none;
             padding: 10px 20px;
