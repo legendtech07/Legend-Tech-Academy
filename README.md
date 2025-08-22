@@ -2,7 +2,7 @@
 
 Ethical Hacking Disclaimer / Policy
 
-Effective Date: August 18, 2025
+Effective Date- August 18, 2025
 
 1. Educational and Ethical Use Only
 All hacking tutorials, tools, articles, and courses provided on Legend Tech are strictly for educational and ethical purposes only.
@@ -17,7 +17,7 @@ Users are required to comply with all local, national, and international laws re
 Engaging in unauthorized access, hacking, or cybercrimes is illegal and punishable by law.
 
 4. Testing in Safe Environments
-We strongly recommend that any penetration testing or ethical hacking practice be done only in controlled environments, such as:
+We strongly recommend that any penetration testing or ethical hacking practice be done only in controlled environments, such as-
 
 Virtual labs
 
@@ -30,7 +30,7 @@ Authorized testing systems (with explicit permission)
 By accessing and using the courses, tutorials, or tools on this platform, you acknowledge that you have read, understood, and agreed to this policy.
 
 6. Contact Us
-For questions or reporting abuse of our content, please contact us at:
+For questions or reporting abuse of our content, please contact us at-
 📧 legendtechlord@gmail.com
 
 
